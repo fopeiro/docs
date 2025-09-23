@@ -39,6 +39,8 @@ and start the SSH daemon with the command:
 sshd
 ```
 
+The SSH daemon will listen to port 8022 by default in Termux, instead of the usual port 22.
+
 OpenSSH will require a login with a user and a password to open a remote SSH session, you can set the password by running:
 
 ```
