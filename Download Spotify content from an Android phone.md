@@ -87,3 +87,25 @@ ssh -p 8022 username@192.168.x.x
 
 > [!TIP]
 > In Termux, the SSH daemon is listening to port 8022 by default (instead of the usual port 22).
+
+## Install Zotify
+
+Follow the [installation instructions from the Zotify documentation](https://github.com/Googolplexed0/zotify).
+
+We'll first install the libraries used by Zotify:
+
+```
+pkg install python3 git ffmpeg
+```
+
+and then we need to get the pipx tool:
+
+```
+python3 -m pip install --user pipx
+```
+
+The pipx location won't be automatically added to the path, so the command to install the Zotify script will be:
+
+```
+/data/data/com.termux/files/home/.local/bin/pipx install git+https://github.com/Googolplexed0/zotify.git
+```
