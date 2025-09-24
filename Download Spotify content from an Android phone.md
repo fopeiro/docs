@@ -1,13 +1,17 @@
 # How to download Spotify content from an Android phone
+
 This document describes a procedure to download Spotify content from an Android phone.
 
 The process involves installing a Termux environment with a Python stack that can run the Zotify script to do the actual downloads.
 
 ## Install Termux
+
 Download Termux from a repository listed on [their webpage](https://termux.dev/en/) and install it.
 
 > [!TIP]
 > Avoid installing Termux from the Google Play Store since they are generally less tested and can have less functionality.
+
+### Post-installation
 
 Update the Termux installation by running:
 
@@ -16,17 +20,14 @@ pkg update
 pkg upgrade
 ```
 
-### Configure Termux
-
-Run the command:
+and give Termux permission to access the phone's local storage with the command:
 
 ```
 termux-setup-storage
 ```
 
-to give Termux permission to access the local storage.
+### Install OpenSSH
 
-### Install and configure OpenSSH
 Install the OpenSSH package by running:
 
 ```
@@ -39,9 +40,7 @@ and start the SSH daemon with the command:
 sshd
 ```
 
-The SSH daemon will listen to port 8022 by default in Termux, instead of the usual port 22.
-
-OpenSSH will require a login with a user and a password to open a remote SSH session, you can set the password by running:
+OpenSSH will require a login with a user and a password to open a remote SSH session, you can set the password for the current user by running:
 
 ```
 passwd
@@ -57,15 +56,17 @@ passwd
 
 ## Connect to Termux
 
-Let's open a remote SSH session to Termux so I can use a real keyboard for the next steps.
+After OpenSSH is installed, you can open a remote session to Termux from a Windows laptop using the ```ssh``` command, which is included in the default Windows installation since version 10.
 
-### Determine the Termux username and the phone's IP address
+### Determine the Termux username
 
-We'll need the Termux username to open a remote SSH session, you can display it using the command:
+We need to know the Termux username to open a remote SSH session, you can display it using the command:
 
 ```
 whoami
 ```
+
+### Determine the phone IP address
 
 The phone IP address can be determined by running the following commands:
 
@@ -78,8 +79,11 @@ The output will show a bunch of information, but the relevant IP will be under w
 
 ### Open a remote SSH session
 
-After OpenSSH is installed, you can open a remote session to Termux from a Windows laptop using the ```ssh``` command, which is included in the default Windows installation since version 10.
+Open an SSH connection to Termux using the command:
 
 ```
 ssh -p 8022 username@192.168.x.x
 ```
+
+> [!TIP]
+> In Termux, the SSH daemon is listening to port 8022 by default (instead of the usual port 22).
