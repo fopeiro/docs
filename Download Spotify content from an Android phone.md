@@ -102,10 +102,10 @@ and then we need to get the pipx tool:
 
 ```
 python3 -m pip install --user pipx
+/data/data/com.termux/files/home/.local/bin/pipx ensurepath
 ```
-
-The pipx location won't be automatically added to the path, so the command to install the Zotify script will be:
+Now we can install the Zotify script:
 
 ```
-/data/data/com.termux/files/home/.local/bin/pipx install git+https://github.com/Googolplexed0/zotify.git
+pipx install git+https://github.com/Googolplexed0/zotify.git
 ```
