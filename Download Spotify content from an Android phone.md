@@ -130,7 +130,7 @@ A sample command to download Spotify content using a Zotify command with the opt
 
 ```
 zotify <track/album/playlist/episode/artist url> `#Track, album, playlist to download` \
-  --root-path ~storage/downloads/zotify          `#Save downloaded tracks in the internal storage` \
+  --root-path $HOME/storage/downloads/zotify     `#Save downloaded tracks in the internal storage` \
   --output "{song_name} - {artist}"              `#Downloaded file names` \
   --download-format mp3                          `#Downloads in MP3 format` \
   --download-lyrics False                        `#Avoid downloading lyrics on separate files`
