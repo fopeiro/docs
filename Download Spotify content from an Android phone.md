@@ -102,10 +102,37 @@ and then we need to get the pipx tool:
 
 ```
 python3 -m pip install --user pipx
-/data/data/com.termux/files/home/.local/bin/pipx ensurepath
+$HOME/.local/bin/pipx ensurepath
 ```
 Now we can install the Zotify script:
 
 ```
 pipx install git+https://github.com/Googolplexed0/zotify.git
+```
+
+## Provide Spotify credentials
+
+**In a Termux session running in the phone**, run the Zotify script:
+
+```
+zotify
+```
+
+It will output a URL to link Spotify with the link to authorize an application.
+
+Copy the URL and paste it in the phone's web browser, and then click the button to authorize the application.
+
+The ```zotify``` instance running in the Termux session should detect the authorization and handle the provided credentials.
+
+## Download Spotify content
+
+A sample command to download Spotify content using a Zotify command with the options that I normally use would be:
+
+```
+zotify <track/album/playlist/episode/artist url> `#Track, album, playlist to download` \
+  --root-path ~storage/downloads/zotify          `#Save downloaded tracks in the internal storage` \
+  --output "{song_name} - {artist}"              `#Downloaded file names` \
+  --skip-existing                                `#Skip songs with the same file name` \
+  --download-format mp3                          `#Downloads in MP3 format` \
+  --download-lyrics False                        `#Avoid downloading lyrics on separate files`
 ```
