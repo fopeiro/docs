@@ -30,6 +30,9 @@ Now we can install the Zotify script:
 pipx install git+https://github.com/Googolplexed0/zotify.git
 ```
 
+> [!TIP]
+> The Zotify script was originally released in the [project's git repository](https://github.com/zotify-dev/zotify), but the installation procedure is not working anymore and the project is no longer maintained, so this document is using the [Googolplexed0 fork](https://github.com/Googolplexed0) instead.
+
 ## Provide Spotify credentials
 
 **In a Termux session running in the phone**, run the Zotify script:
