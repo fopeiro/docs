@@ -29,3 +29,11 @@ and change the path to the $HOME folder so that the internal storage is configur
 ```
 sed -i s,@TERMUX_HOME@,$HOME, $PREFIX/etc/samba/smb.conf
 ```
+
+## User creation
+
+Create a new user for the Samba shares with the command:
+
+```
+smbpasswd -L -a
+```
