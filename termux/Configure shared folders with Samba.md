@@ -37,3 +37,15 @@ Create a new user for the Samba shares with the command:
 ```
 smbpasswd -L -a
 ```
+
+## Start the daemon
+
+```
+smbpasswd -L -a
+```
+
+## Check the configuration
+
+```
+smbclient --port=4445 //192.168.x.xx/internal --user=username --password=password
+```
