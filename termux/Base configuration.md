@@ -1,8 +1,6 @@
-# How to download Spotify content from an Android phone
+# Base configuration
 
-This document describes a procedure to download Spotify content from an Android phone.
-
-The process involves installing a Termux environment with a Python stack that can run the Zotify script to do the actual downloads.
+This document describes a procedure to install Termux in an Android phone, configure SSH and open a remote session in the terminal.
 
 ## Install Termux
 
@@ -88,50 +86,16 @@ ssh -p 8022 username@192.168.x.x
 > [!TIP]
 > In Termux, the SSH daemon is listening to port 8022 by default (instead of the usual port 22).
 
-## Install Zotify
+## Display system information
 
-Follow the [installation instructions from the Zotify documentation](https://github.com/Googolplexed0/zotify).
-
-We'll first install the libraries used by Zotify:
+Install the neofetch package by running:
 
 ```
-pkg install python3 git ffmpeg
+pkg install neofetch
 ```
 
-and then we need to get the pipx tool:
+and display information about the Termux system with the command:
 
 ```
-python3 -m pip install --user pipx
-$HOME/.local/bin/pipx ensurepath
-```
-Now we can install the Zotify script:
-
-```
-pipx install git+https://github.com/Googolplexed0/zotify.git
-```
-
-## Provide Spotify credentials
-
-**In a Termux session running in the phone**, run the Zotify script:
-
-```
-zotify
-```
-
-It will output a URL to link Spotify with the link to authorize an application.
-
-Copy the URL and paste it in the phone's web browser, and then click the button to authorize the application.
-
-The ```zotify``` instance running in the Termux session should detect the authorization and handle the provided credentials.
-
-## Download Spotify content
-
-A sample command to download Spotify content using a Zotify command with the options that I normally use would be:
-
-```
-zotify <track/album/playlist/episode/artist url> `#Track, album, playlist to download` \
-  --root-path $HOME/storage/downloads/zotify     `#Save downloaded tracks in the internal storage` \
-  --output "{song_name} - {artist}"              `#Downloaded file names` \
-  --download-format mp3                          `#Downloads in MP3 format` \
-  --download-lyrics False                        `#Avoid downloading lyrics on separate files`
+neofetch
 ```
