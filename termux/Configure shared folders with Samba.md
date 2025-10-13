@@ -24,7 +24,7 @@ Copy the sample Samba configuration file to the new folder:
 cp $PREFIX/share/doc/samba/smb.conf.example $PREFIX/etc/samba/smb.conf
 ```
 
-and change the path to the $HOME folder so that the internal storage is configured correctly:
+and change the path to the ```$HOME``` folder so that the internal storage is configured correctly:
 
 ```
 sed -i s,@TERMUX_HOME@,$HOME, $PREFIX/etc/samba/smb.conf
