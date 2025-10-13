@@ -24,18 +24,8 @@ Copy the sample Samba configuration file to the new folder:
 cp $PREFIX/share/doc/samba/smb.conf.example $PREFIX/etc/samba/smb.conf
 ```
 
-and open an editor to change the configuration files:
+and change the path to the $HOME folder so that the internal storage is configured correctly:
 
 ```
-nano $PREFIX/etc/samba/smb.conf
+sed -i s,@TERMUX_HOME@,$HOME, $PREFIX/etc/samba/smb.conf
 ```
-
-In the configuration file, locate the \[internal\] section and change the path to the Termux shared storage:
-
-```
-[internal]
-  comment = Internal storage
-  path = /data/data/com.termux/files/home/storage/shared
-; rest stuff unchanged
-```
-
