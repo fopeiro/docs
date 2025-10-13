@@ -40,12 +40,32 @@ smbpasswd -L -a
 
 ## Start the daemon
 
+The Samba daemon can be started with the command:
+
 ```
-smbpasswd -L -a
+smbd
 ```
 
 ## Check the configuration
 
+If the Samba daemon has started correctly, the following command:
+
 ```
 smbclient --port=4445 //192.168.x.xx/internal --user=username --password=password
 ```
+
+should open an SMB session in the device.
+
+> [!TIP]
+> [A separate document](https://github.com/fopeiro/docs/blob/main/termux/Base%20configuration.md#connect-to-termux) describes the procedure to determine the IP of the device and the current username.
+
+## Map the drive from Windows
+
+Map the Samba share from a Windows machine using the command:
+
+```
+net use Z: \\192.168.x.xx\internal /TCPPORT:4445 /user:username password
+```
+
+> [!TIP]
+> In Termux, the Samba daemon is listening to port 4445 by default (instead of the usual port 445).
