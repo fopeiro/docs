@@ -1,6 +1,6 @@
 # Base configuration
 
-This document describes a procedure to install Termux in an Android phone, configure SSH and open a remote session in the terminal.
+This document describes a procedure to install Termux in an Android phone, configure SSH to enable remote logging and open a remote session in the terminal.
 
 ## Install Termux
 
