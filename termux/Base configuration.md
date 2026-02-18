@@ -100,7 +100,7 @@ and display information about the Termux system with the command:
 neofetch
 ```
 
-### Access the SD card contents
+## Access the SD card contents
 
 The SD card contents will stored in a hidden folder which is hidden by default, its path can be determined with the command:
 
