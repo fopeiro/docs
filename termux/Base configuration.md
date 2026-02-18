@@ -24,6 +24,13 @@ and give Termux permission to access the phone's local storage with the command:
 termux-setup-storage
 ```
 
+> [!TIP]
+> The SD card contents will be available in a hidden folder, you can get its name with the command:
+> 
+> ```
+> readlink -f ~/storage/external-1 | cut -d/ -f-3
+> ```
+
 ### Install OpenSSH
 
 Install the OpenSSH package by running:
