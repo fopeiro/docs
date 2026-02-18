@@ -73,7 +73,7 @@ ln -sf $PREFIX/share/termux-services/svlogger $PREFIX/var/service/smbd/log/run
 and create a run script for the service:
 
 ```
-printf '#!/data/data/com.termux/files/usr/bin/sh\nexec smbd -F -d3 2>&1' > $PREFIX/var/service/smbd/run
+printf '#!/data/data/com.termux/files/usr/bin/sh\nexec smbd -F -d3 2>&1\n' > $PREFIX/var/service/smbd/run
 ```
 
 Make the run script executable with the following command:
