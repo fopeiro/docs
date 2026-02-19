@@ -1,12 +1,6 @@
 # How to download Spotify content
 
-This document describes a procedure to download Spotify content from an Android phone.
-
-The process involves installing a Termux environment with a Python stack that can run the Zotify script to do the actual downloads.
-
-## Install Termux
-
-[A separate document](https://github.com/fopeiro/docs/blob/main/termux/Base%20configuration.md) describes the procedure to do a base installation of Termux.
+This document describes a procedure to download Spotify content from Termux using Zotify.
 
 ## Install Zotify
 
