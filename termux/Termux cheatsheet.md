@@ -12,8 +12,16 @@ readlink -f ~/storage/external-1 | cut -d/ -f-3
 
 ## Basic packages
 
-This would be a command to install some basic packages in one go:
+Install several basic packages with the command:
 
 ```
-pkg install termux-services neofetch openssh rclone
+pkg install neofetch micro openssh rclone termux-services
+```
+
+## Micro configuration
+
+Set the Micro editor configuration with the following command:
+
+```
+printf '{\n    "clipboard": "terminal"\n}\n' > $HOME/.config/micro/settings.json
 ```
