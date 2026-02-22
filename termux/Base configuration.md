@@ -99,3 +99,11 @@ and display information about the Termux system with the command:
 ```
 neofetch
 ```
+
+## Create symbolink link to the SD card
+
+Create a symbolic link to the SD card by running:
+
+```
+ln -s $(readlink -f ~/storage/external-1 | cut -d/ -f-3) $HOME/storage/SDCard
+```
