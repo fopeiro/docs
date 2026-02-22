@@ -86,6 +86,14 @@ ssh -p 8022 username@192.168.x.x
 > [!TIP]
 > In Termux, the SSH daemon is listening to port 8022 by default (instead of the usual port 22).
 
+## Create symbolink link to the SD card
+
+Create a symbolic link to the SD card by running:
+
+```
+ln -s $(readlink -f ~/storage/external-1 | cut -d/ -f-3) $HOME/storage/SDCard
+```
+
 ## Display system information
 
 Install the neofetch package by running:
@@ -98,12 +106,4 @@ and display information about the Termux system with the command:
 
 ```
 neofetch
-```
-
-## Create symbolink link to the SD card
-
-Create a symbolic link to the SD card by running:
-
-```
-ln -s $(readlink -f ~/storage/external-1 | cut -d/ -f-3) $HOME/storage/SDCard
 ```
