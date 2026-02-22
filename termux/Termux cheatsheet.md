@@ -15,7 +15,7 @@ readlink -f ~/storage/external-1 | cut -d/ -f-3
 Install several basic packages with the command:
 
 ```
-pkg install neofetch micro openssh rclone termux-services
+pkg install neofetch micro openssh rclone termux-services wget
 ```
 
 ## Micro configuration
